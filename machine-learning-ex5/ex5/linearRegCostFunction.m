@@ -20,11 +20,14 @@ grad = zeros(size(theta));
 %
 
 
+h = X*theta;
+sumatoriosJ = sum (((h-y).^2))+ lambda * (sum(theta(2:end).^2));
+J = sumatoriosJ / (2*m);
 
-
-
-
-
+grad = X'*(h-y)/m;
+thetaT = theta;
+thetaT(1,1)=0; % el primer elemento debe ser cero
+grad += (1/m)*(lambda*thetaT);
 
 
 
