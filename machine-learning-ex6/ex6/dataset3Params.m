@@ -23,11 +23,53 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+% fprintf('Búsqueda de los mejores valores para C y sigma \n');
+% error_min = inf; % aquí guardaré el valor del error mínimo
+% values = [0.01 0.03 0.1 0.3 1 3 10 30]; % valores para C y para sigma
+
+% for _C = values
+%   for _sigma = values
+%   	fprintf('Valores de [_C, _sigma] = [%f %f]\n', _C, _sigma);
+%     model = svmTrain(X, y, _C, @(x1, x2) gaussianKernel(x1, x2, _sigma));
+%     e = mean(double(svmPredict(model, Xval) ~= yval));
+%     fprintf('predicción error: %f\n', e);
+%     if( e <= error_min )      
+%       C = _C;
+%       sigma = _sigma;
+%       error_min = e;
+%     end
+%   end
+% end
+
+% fprintf('Mejores valores [C, sigma] = [%f %f] con una predicción de error = %f\n\n', C, sigma, error_min);
+
+C = 3;
+sigma = 0.1;
+
+% fprintf('Búsqueda de los mejores valores para C y sigma \n');
+% error_min = 1000; % aquí guardaré el valor del error mínimo
+% values = [0.01 0.03 0.1 0.3 1 3 10 30]; % valores para C y para sigma
+
+% for _C = values
+%   for _sigma = values
+%   	fprintf('Valores de [_C, _sigma] = [%f %f]\n', _C, _sigma);
+%     model = svmTrain(X, y, _C, @(x1, x2) gaussianKernel(x1, x2, _sigma));
+%     e = mean(double(svmPredict(model, Xval) ~= yval));
+%     fprintf('predicción error: %f\n', e);
+%     if( e <= error_min ) 
+%       error_min = e;     
+%       C = _C;
+%       sigma = _sigma;
+%     end
+%   end
+%     fprintf('__________\n');
+% end
+
+% fprintf('Mejores valores [C, sigma] = [%f %f] con una predicción de error = %f\n\n', C, sigma, error_min);
 
 
-
-
-
+C = 1;
+sigma = 0.1;
 
 % =========================================================================
 

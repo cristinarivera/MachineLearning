@@ -98,10 +98,12 @@ while ~isempty(email_contents)
     %
 
 
-
-
-
-
+    for i=1: length(vocabList);
+      if strcmp(vocabList{i}, str); % si la palabra está en la lista de vocabulario
+        word_indices = [word_indices , i]; % si pongo ',' añade el número en la columna siguiente
+        % word_indices = [word_indices ; i]; % si pongo ';' añade el número en la fila siguiente     
+      end
+    end
 
 
 
