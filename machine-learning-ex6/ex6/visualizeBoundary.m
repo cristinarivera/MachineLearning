@@ -18,7 +18,10 @@ end
 
 % Plot the SVM boundary
 hold on
-contour(X1, X2, vals, [0 0], 'Color', 'b');
+% la siguiente linea da error.
+% contour(X1, X2, vals, [0 0], 'Color', 'b');
+% la cambio por: 
+contour(X1, X2, vals, [1 1], 'LineColor', 'b');
 hold off;
 
 end
